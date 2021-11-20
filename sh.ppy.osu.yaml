@@ -76,8 +76,10 @@ modules:
       - desktop-file-edit --set-key="Exec" --set-value="start-osu %F" /app/share/applications/sh.ppy.osu.desktop
       - desktop-file-edit --set-key="StartupWMClass" --set-value="osu!" /app/share/applications/sh.ppy.osu.desktop
       - desktop-file-edit --set-key="StartupNotify" --set-value="true" /app/share/applications/sh.ppy.osu.desktop ###
-      - desktop-file-edit --set-key="MimeType" --set-value="application/x-osu-beatmap;application/x-osu-beatmap-archive;application/x-osu-skin-archive;application/x-osu-storyboard;application/x-osu-replay;application/zip;x-scheme-handler/osu" /app/share/applications/sh.ppy.osu.desktop
-      - desktop-file-edit --set-key="X-Flatpak-RenamedFrom" --set-value="osu!.desktop" /app/share/applications/sh.ppy.osu.desktop
+      - desktop-file-edit --set-key="MimeType" --set-value="application/x-osu-beatmap;application/x-osu-beatmap-archive;application/x-osu-skin-archive;application/x-osu-storyboard;application/x-osu-replay;application/zip;x-scheme-handler/osu"
+        /app/share/applications/sh.ppy.osu.desktop
+      - desktop-file-edit --set-key="X-Flatpak-RenamedFrom" --set-value="osu!.desktop"
+        /app/share/applications/sh.ppy.osu.desktop
       - desktop-file-edit --remove-key="Path" /app/share/applications/sh.ppy.osu.desktop
       - install -D -m 644 ld.so.conf /app/etc/ld.so.conf
       - install -m 755 start-osu /app/bin/start-osu
@@ -105,14 +107,15 @@ modules:
       - install -D -m 644 sh.ppy.osu.appdata.xml /app/share/metainfo/sh.ppy.osu.appdata.xml
     sources:
       - type: file
-        url:  https://github.com/ppy/osu/releases/download/2021.1113.0/osu.AppImage
-        sha256: 70f48a3ea5805c316d6c242980a5e4d1136a3acf11bb1c696c2b929e0a84b4fc
+        url: https://github.com/ppy/osu/releases/download/2021.1120.0/osu.AppImage
+        sha256: 94933a6bf57be1d9acf3d4a5982fcf568140d3685c878d401ad75d5e0ba7dd7d
         dest-filename: osu.AppImage
         x-checker-data:
           type: json
           url: https://api.github.com/repos/ppy/osu/releases/latest
           version-query: .tag_name | sub("^v"; "")
-          url-query: '"https://github.com/ppy/osu/releases/download/" + $version + "/osu.AppImage"'
+          url-query: '"https://github.com/ppy/osu/releases/download/" + $version +
+            "/osu.AppImage"'
       - type: file
         path: icons/osu-512.png
       - type: file
