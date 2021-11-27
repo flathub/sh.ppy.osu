@@ -27,8 +27,8 @@
         <mediatype>application/x-osu-beatmap</mediatype>
         <mediatype>application/x-osu-beatmap-archive</mediatype>
         <mediatype>application/x-osu-skin-archive</mediatype>
-        <mediatype>application/x-osu-storyboard</mediatype>
-        <mediatype>application/x-osu-replay</mediatype>
+	<mediatype>application/x-osu-storyboard</mediatype>
+	<mediatype>application/x-osu-replay</mediatype>
         <binary>osu!</binary>
     </provides>
     <screenshots>
@@ -75,23 +75,30 @@
         <release version="2021.1120.0" date="2021-11-20"/>
         <release version="2021.1113.0" date="2021-11-13"/>
     </releases>
-    <content_rating type="oars-1.1">
+    <content_rating type="oars-1.0">
+        <content_attribute id="violence-cartoon">none</content_attribute>
+        <content_attribute id="violence-fantasy">none</content_attribute>
+        <content_attribute id="violence-realistic">none</content_attribute>
+        <content_attribute id="violence-bloodshed">none</content_attribute>
+        <content_attribute id="violence-sexual">none</content_attribute>
+        <content_attribute id="drugs-alcohol">none</content_attribute>
+        <content_attribute id="drugs-narcotics">none</content_attribute>
+        <content_attribute id="drugs-tobacco">none</content_attribute>
         <content_attribute id="sex-nudity">mild</content_attribute>
+        <content_attribute id="sex-themes">none</content_attribute>
+        <content_attribute id="language-profanity">none</content_attribute>
         <content_attribute id="language-humor">mild</content_attribute>
-        <content_attribute id="social-chat">moderate</content_attribute>
+        <content_attribute id="language-discrimination">none</content_attribute>
+        <content_attribute id="social-chat">intense</content_attribute>
         <content_attribute id="social-info">moderate</content_attribute>
-        <content_attribute id="money-purchasing">mild</content_attribute>
+        <content_attribute id="social-audio">none</content_attribute>
+        <content_attribute id="social-location">none</content_attribute>
+        <content_attribute id="social-contacts">none</content_attribute>
+        <content_attribute id="money-purchasing">none</content_attribute>
+        <content_attribute id="money-gambling">none</content_attribute>
     </content_rating>
     <url type="bugtracker">https://github.com/flathub/sh.ppy.osu/issues</url>
     <url type="faq">https://osu.ppy.sh/wiki/en/FAQ</url>
     <url type="donation">https://osu.ppy.sh/home/support</url>
     <url type="help">https://osu.ppy.sh/wiki/en/Main_Page</url>
-    <url type="translate">https://crowdin.com/project/osu-web</url>
-    <recommends>
-        <control>pointing</control>
-        <control>keyboard</control>
-    </recommends>
-    <kudos>     <!-- Gnome Software specific things (https://gitlab.gnome.org/GNOME/gnome-software/-/blob/main/doc/kudos.md) -->
-        <kudo>HiDpiIcon</kudo>              <!-- 128x128 or larger application icon -->
-    </kudos>
 </component>
