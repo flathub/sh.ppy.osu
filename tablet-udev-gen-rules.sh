@@ -232,7 +232,7 @@ for vendor in "$dir"/OpenTabletDriver.Configurations/Configurations/*; do
 				echo -e "Progress: ${_grn}$_current${reg}%"
 			}
 			#
-			break
+			continue
 		fi
 		vendorid_hex="$(printf "%04x" "$vendorid")"
 		products="$(jq -M -r .DigitizerIdentifiers[].ProductID "$device" | sort -u)"
