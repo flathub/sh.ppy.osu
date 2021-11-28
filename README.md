@@ -27,6 +27,6 @@ or, follow [this guide](https://opentabletdriver.net/Wiki/FAQ/Linux#fail-device-
 Please, share your experience of using a graphics tablet in **osu!**. Both on the build in `flatpak` and on the official one (`AppImage`).
 
 ## When selecting files, not all directories are visible
-This happens because when a flatpak container is launched, only the necessary directories are passthrough to it.
+This happens because when a flatpak container is launched, only the necessary directories are passed through to it.
 
 If you want to be able to access all files and directories in your home directory, use `Flatseal` from `flatpak`, or `sudo flatpak override sh.ppy.osu --filesystem=host`
