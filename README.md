@@ -1,6 +1,6 @@
 # osu!
 Keep in mind that the package is **not** official, there may be bugs specific to the flatpak. If you find such, report them here.
-> Note: this is lazer, not osu-stable
+> Note: This is osu!(lazer) - a future update which is yet to be considered mainstream. It is not osu!(stable).
 
 ## Where is the game directory located?
 Check `~/.var/app/sh.ppy.osu/data/osu`
