@@ -5,8 +5,8 @@ Keep in mind that the package is **not** official, there may be bugs specific to
 ## Where is the game directory located?
 Check `~/.var/app/sh.ppy.osu/data/osu`
 
-## Graphic tablets
-Currently, support for graphics tablets on linux is implemented through the standalone [OpenTabletDriver](https://github.com/OpenTabletDriver/OpenTabletDriver) driver. \
+## Graphics tablets
+osu! uses [OpenTabletDriver](https://github.com/OpenTabletDriver/OpenTabletDriver) for graphics tablets support. \
 However, it may not work for some reasons, here are some of them:
  - **At the moment, the tablet is controlled by the kernel module** \
 You need to unload the module yourself from the terminal, using the following command: \
