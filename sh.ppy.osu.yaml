@@ -72,8 +72,8 @@ modules:
         url: https://www.freedesktop.org/software/libevdev/libevdev-1.12.0.tar.xz
         sha256: 2f729e3480695791f9482e8388bd723402b89f0eaf118057bbdea3cecee9b237
     config-opts:
-      - "-Ddocumentation=disabled"
-      - "-Dtests=disabled"
+      - -Ddocumentation=disabled
+      - -Dtests=disabled
 
   - name: osu-lazer
     buildsystem: simple
@@ -120,8 +120,8 @@ modules:
       - install -D -m 644 sh.ppy.osu.appdata.xml /app/share/metainfo/sh.ppy.osu.appdata.xml
     sources:
       - type: file
-        url: https://github.com/ppy/osu/releases/download/2021.1127.0/osu.AppImage
-        sha256: cebfd12f8baa37dc25aef6c51e2157098e63121fec189473ba9cb92220d3a394
+        url: https://github.com/ppy/osu/releases/download/2021.1202.0/osu.AppImage
+        sha256: 9a00847e06781d85f7d0328d3f631f21e7167088328f97a87d22e78c2f80be39
         dest-filename: osu.AppImage
         x-checker-data:
           type: json
