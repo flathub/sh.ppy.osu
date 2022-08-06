@@ -20,6 +20,7 @@ finish-args:
   - --filesystem=xdg-videos:ro
   - --filesystem=xdg-pictures:ro
   - --filesystem=xdg-run/app/com.discordapp.Discord:create
+  - --filesystem=xdg-run/app/com.discordapp.DiscordCanary:create
   - --filesystem=~/.wine:ro
   - --filesystem=~/.osu:ro
 command: start-osu
