@@ -12,6 +12,9 @@ finish-args:
   - --share=network
   - --device=all
   - --socket=pulseaudio
+  # https://github.com/ppy/osu/pull/19471/commits/38a8b9cf0af9e5bbd523378710ab2adbd908a36d
+  # https://github.com/libsdl-org/SDL/blob/a6179e85c02bc65ff64553c046b16d2ef1a72ba9/src/power/linux/SDL_syspower.c#L542
+  - --system-talk-name=org.freedesktop.UPower
   - --filesystem=xdg-music:ro
   - --filesystem=xdg-download:rw
   - --filesystem=xdg-videos:ro
