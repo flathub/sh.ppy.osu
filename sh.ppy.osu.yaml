@@ -56,7 +56,6 @@ modules:
         /app/share/applications/sh.ppy.osu.desktop
       - desktop-file-edit --set-key="X-Flatpak-RenamedFrom" --set-value="osu!.desktop"
         /app/share/applications/sh.ppy.osu.desktop
-      - desktop-file-edit --remove-key="Path" /app/share/applications/sh.ppy.osu.desktop
       - install -D -m 644 ld.so.conf /app/etc/ld.so.conf
       - install -m 755 start-osu /app/bin/start-osu
         # app icons
