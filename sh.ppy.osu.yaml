@@ -48,6 +48,10 @@ modules:
       - mv ./squashfs-root/usr/bin/* /app/bin
         # desktop file
       - install -D -m 644 ./squashfs-root/osu!.desktop /app/share/applications/sh.ppy.osu.desktop
+        # The following two lines can be removed after flathub supports version 1.5 of desktop entry files
+        # See https://discourse.flathub.org/t/what-version-of-desktop-entry-file-is-allowed-in-flathub/2351
+      - desktop-file-edit --remove-key="SingleMainWindow" --set-key="Version" --set-value="1.4" /app/share/applications/sh.ppy.osu.desktop
+      - desktop-file-edit --set-key="X-SingleMainWindow" --set-value="true" /app/share/applications/sh.ppy.osu.desktop
       - desktop-file-edit --set-key="Icon" --set-value="sh.ppy.osu" /app/share/applications/sh.ppy.osu.desktop
       - desktop-file-edit --set-key="Exec" --set-value="start-osu %F" /app/share/applications/sh.ppy.osu.desktop
       - desktop-file-edit --set-key="StartupWMClass" --set-value="osu!" /app/share/applications/sh.ppy.osu.desktop
@@ -82,8 +86,8 @@ modules:
       - install -D -m 644 sh.ppy.osu.appdata.xml /app/share/metainfo/sh.ppy.osu.appdata.xml
     sources:
       - type: file
-        url: https://github.com/ppy/osu/releases/download/2022.1101.0/osu.AppImage
-        sha256: b70ceda8d96a2489cd6004cb36c2d2bf23f2912317313e9dce9356309c1f9e92
+        url: https://github.com/ppy/osu/releases/download/2022.1205.0/osu.AppImage
+        sha256: deda93a2c945343d82d5f77c729e8206145c2e24f66a33dc3449888655b86e2c
         dest-filename: osu.AppImage
         x-checker-data:
           type: json
