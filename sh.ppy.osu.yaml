@@ -87,8 +87,8 @@ modules:
       - install -D -m 644 sh.ppy.osu.appdata.xml /app/share/metainfo/sh.ppy.osu.appdata.xml
     sources:
       - type: file
-        url: https://github.com/ppy/osu/releases/download/2022.1207.0/osu.AppImage
-        sha256: 1b0ce01424f1678ce5df3339adde73668441ed11584ada769abd38242a2abc6d
+        url: https://github.com/ppy/osu/releases/download/2022.1208.0/osu.AppImage
+        sha256: e3b17d419948b866337bef4dd4d4d02c5040880408a608a22d6ce18000b416ce
         dest-filename: osu.AppImage
         x-checker-data:
           type: json
