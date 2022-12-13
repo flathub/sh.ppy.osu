@@ -1,6 +1,6 @@
 app-id: sh.ppy.osu
 runtime: org.freedesktop.Platform
-runtime-version: '21.08'
+runtime-version: '22.08'
 sdk: org.freedesktop.Sdk
 separate-locales: false
 build-options:
@@ -12,56 +12,19 @@ finish-args:
   - --share=network
   - --device=all
   - --socket=pulseaudio
+  # https://github.com/ppy/osu/pull/19471/commits/38a8b9cf0af9e5bbd523378710ab2adbd908a36d
+  # https://github.com/libsdl-org/SDL/blob/a6179e85c02bc65ff64553c046b16d2ef1a72ba9/src/power/linux/SDL_syspower.c#L542
+  - --system-talk-name=org.freedesktop.UPower
   - --filesystem=xdg-music:ro
   - --filesystem=xdg-download:rw
   - --filesystem=xdg-videos:ro
   - --filesystem=xdg-pictures:ro
   - --filesystem=xdg-run/app/com.discordapp.Discord:create
+  - --filesystem=xdg-run/app/com.discordapp.DiscordCanary:create
   - --filesystem=~/.wine:ro
   - --filesystem=~/.osu:ro
 command: start-osu
 modules:
-  - name: ffmpeg
-    cleanup:
-      - /include
-      - /lib/pkgconfig
-      - /share/ffmpeg
-    sources:
-      - type: git
-        url: https://git.ffmpeg.org/ffmpeg.git
-        commit: 7e0d640edf6c3eee1816b105c2f7498c4f948e74
-    build-options:
-      config-opts:
-        - --enable-pic
-        - --disable-programs
-        - --enable-shared
-        - --disable-static
-        - --disable-doc
-        - --disable-muxers
-        - --disable-encoders
-        - --enable-libdav1d
-        - --enable-avcodec
-        - --enable-avdevice
-        - --enable-avfilter
-        - --enable-swresample
-        - --enable-swscale
-        - --enable-postproc
-        - --enable-decoder=h264
-        - --enable-decoder=hevc
-        - --enable-libvpx
-        - --enable-decoder=vp8
-        - --enable-decoder=vp9
-        - --enable-decoder=av1
-        - --enable-hwaccel=av1_vaapi
-        - --enable-hwaccel=vp8_vaapi
-        - --enable-hwaccel=vp9_vaapi
-        - --enable-hwaccel=vp9_vdpau
-        - --enable-hwaccel=h264_vaapi
-        - --enable-hwaccel=hevc_vaapi
-        - --enable-hwaccel=h264_vdpau
-        - --enable-hwaccel=hevc_vdpau
-        - --enable-libdrm
-
   - name: libevdev
     buildsystem: meson
     cleanup:
@@ -69,8 +32,8 @@ modules:
       - /lib/pkgconfig
     sources:
       - type: archive
-        url: https://www.freedesktop.org/software/libevdev/libevdev-1.12.0.tar.xz
-        sha256: 2f729e3480695791f9482e8388bd723402b89f0eaf118057bbdea3cecee9b237
+        url: https://www.freedesktop.org/software/libevdev/libevdev-1.12.1.tar.xz
+        sha256: 1dbba41bc516d3ca7abc0da5b862efe3ea8a7018fa6e9b97ce9d39401b22426c
     config-opts:
       - -Ddocumentation=disabled
       - -Dtests=disabled
@@ -85,6 +48,11 @@ modules:
       - mv ./squashfs-root/usr/bin/* /app/bin
         # desktop file
       - install -D -m 644 ./squashfs-root/osu!.desktop /app/share/applications/sh.ppy.osu.desktop
+        # The following two lines can be removed after flathub supports version 1.5 of desktop entry files
+        # See https://discourse.flathub.org/t/what-version-of-desktop-entry-file-is-allowed-in-flathub/2351
+      - desktop-file-edit --remove-key="SingleMainWindow" --set-key="Version" --set-value="1.4"
+        /app/share/applications/sh.ppy.osu.desktop
+      - desktop-file-edit --set-key="X-SingleMainWindow" --set-value="true" /app/share/applications/sh.ppy.osu.desktop
       - desktop-file-edit --set-key="Icon" --set-value="sh.ppy.osu" /app/share/applications/sh.ppy.osu.desktop
       - desktop-file-edit --set-key="Exec" --set-value="start-osu %F" /app/share/applications/sh.ppy.osu.desktop
       - desktop-file-edit --set-key="StartupWMClass" --set-value="osu!" /app/share/applications/sh.ppy.osu.desktop
@@ -93,7 +61,6 @@ modules:
         /app/share/applications/sh.ppy.osu.desktop
       - desktop-file-edit --set-key="X-Flatpak-RenamedFrom" --set-value="osu!.desktop"
         /app/share/applications/sh.ppy.osu.desktop
-      - desktop-file-edit --remove-key="Path" /app/share/applications/sh.ppy.osu.desktop
       - install -D -m 644 ld.so.conf /app/etc/ld.so.conf
       - install -m 755 start-osu /app/bin/start-osu
         # app icons
@@ -120,8 +87,8 @@ modules:
       - install -D -m 644 sh.ppy.osu.appdata.xml /app/share/metainfo/sh.ppy.osu.appdata.xml
     sources:
       - type: file
-        url: https://github.com/ppy/osu/releases/download/2022.515.0/osu.AppImage
-        sha256: 7a9dba8f88ff6f665fb87347a2f76a85b3bdb294bb2ff0387310080d8b977f24
+        url: https://github.com/ppy/osu/releases/download/2022.1208.0/osu.AppImage
+        sha256: e3b17d419948b866337bef4dd4d4d02c5040880408a608a22d6ce18000b416ce
         dest-filename: osu.AppImage
         x-checker-data:
           type: json

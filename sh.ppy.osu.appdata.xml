@@ -71,6 +71,38 @@
     <!-- Assets used by osu! is licensed under CC-BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/legalcode) -->
     <developer_name>ppy Pty Ltd</developer_name>
     <releases>
+        <release version="2022.1208.0" date="2022-12-08"/>
+        <release version="2022.1207.0" date="2022-12-07"/>
+        <release version="2022.1205.0" date="2022-12-05"/>
+        <release version="2022.1117.0" date="2022-11-17"/>
+        <release version="2022.1101.0" date="2022-11-01"/>
+        <release version="2022.1031.0" date="2022-10-31"/>
+        <release version="2022.1022.0" date="2022-10-22"/>
+        <release version="2022.1008.2" date="2022-10-08"/>
+        <release version="2022.923.1" date="2022-09-23"/>
+        <release version="2022.923.0" date="2022-09-23"/>
+        <release version="2022.911.0" date="2022-09-11"/>
+        <release version="2022.910.0" date="2022-09-09"/>
+        <release version="2022.902.1" date="2022-09-01"/>
+        <release version="2022.901.0" date="2022-08-31"/>
+        <release version="2022.821.0" date="2022-08-21"/>
+        <release version="2022.816.0" date="2022-08-16"/>
+        <release version="2022.810.2" date="2022-08-10"/>
+        <release version="2022.731.1" date="2022-07-30"/>
+        <release version="2022.723.0" date="2022-07-22"/>
+        <release version="2022.719.0" date="2022-07-18"/>
+        <release version="2022.716.1" date="2022-07-16"/>
+        <release version="2022.709.1" date="2022-07-08"/>
+        <release version="2022.709.0" date="2022-07-08"/>
+        <release version="2022.704.0" date="2022-07-03"/>
+        <release version="2022.630.0" date="2022-06-29"/>
+        <release version="2022.628.0" date="2022-06-28"/>
+        <release version="2022.621.0" date="2022-06-21"/>
+        <release version="2022.615.0" date="2022-06-15"/>
+        <release version="2022.612.0" date="2022-06-11"/>
+        <release version="2022.605.1" date="2022-06-05"/>
+        <release version="2022.528.0" date="2022-05-28"/>
+        <release version="2022.523.0" date="2022-05-23"/>
         <release version="2022.515.0" date="2022-05-15"/>
         <release version="2022.509.0" date="2022-05-09"/>
         <release version="2022.501.0" date="2022-05-01"/>
