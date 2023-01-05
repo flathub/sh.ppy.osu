@@ -7,7 +7,8 @@ build-options:
   no-debuginfo: true
 finish-args:
   - --share=ipc
-  - --socket=x11
+# Can be overriden by the end user if needed, but osu! on Wayland seems to be the better choice for now.
+  - --socket=fallback-x11
   - --socket=wayland
   - --share=network
   - --device=all
@@ -21,10 +22,13 @@ finish-args:
   - --filesystem=xdg-pictures:ro
   - --filesystem=xdg-run/app/com.discordapp.Discord:create
   - --filesystem=xdg-run/app/com.discordapp.DiscordCanary:create
+# osu! migration feature, for standard osu installations. Won't work for installs outside of these directories.
   - --filesystem=~/.wine:ro
   - --filesystem=~/.osu:ro
 command: start-osu
 modules:
+# SDL2 is bundled here for better compatibility, such as proper Wayland support. The fd.o runtime ships an out-of-date SDL2 and also doesn't include libdecor. 
+  - shared-modules/SDL2/SDL2-2.26.1-with-libdecor.json
   - name: libevdev
     buildsystem: meson
     cleanup:
