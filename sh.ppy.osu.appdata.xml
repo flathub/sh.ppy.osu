@@ -71,6 +71,7 @@
     <!-- Assets used by osu! is licensed under CC-BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/legalcode) -->
     <developer_name>ppy Pty Ltd</developer_name>
     <releases>
+        <release version="2023.621.0" date="2023-06-21"/>
         <release version="2023.617.0" date="2023-06-16"/>
         <release version="2023.614.1" date="2023-06-14"/>
         <release version="2023.614.0" date="2023-06-14"/>
