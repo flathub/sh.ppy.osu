@@ -25,6 +25,7 @@ finish-args:
 # osu! migration feature, for standard osu installations. Won't work for installs outside of these directories.
   - --filesystem=~/.wine:ro
   - --filesystem=~/.osu:ro
+  - --filesystem=~/.local/share/osu-wine:ro
 command: start-osu
 modules:
 # SDL2 is bundled here for better compatibility, such as proper Wayland support. The fd.o runtime ships an out-of-date SDL2 and also doesn't include libdecor. 
@@ -91,8 +92,8 @@ modules:
       - install -D -m 644 sh.ppy.osu.appdata.xml /app/share/metainfo/sh.ppy.osu.appdata.xml
     sources:
       - type: file
-        url: https://github.com/ppy/osu/releases/download/2022.1228.0/osu.AppImage
-        sha256: 28327a1eb9c6c8ce81aed7fae82d2bfa16d2b7fb2da697beb2b0a1b4d4a843d8
+        url: https://github.com/ppy/osu/releases/download/2023.815.0/osu.AppImage
+        sha256: c11589410e2b9f703c0dde7780fb7ada93ad77d2919985f1b9e8ddf1118e01dc
         dest-filename: osu.AppImage
         x-checker-data:
           type: json
