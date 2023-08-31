@@ -23,6 +23,7 @@ finish-args:
   - --filesystem=xdg-run/app/com.discordapp.DiscordCanary:create
   - --filesystem=~/.wine:ro
   - --filesystem=~/.osu:ro
+  - --filesystem=~/.local/share/osu-wine:ro
 command: start-osu
 modules:
   - name: libevdev
