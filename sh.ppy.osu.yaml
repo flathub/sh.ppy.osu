@@ -1,6 +1,6 @@
 app-id: sh.ppy.osu
 runtime: org.freedesktop.Platform
-runtime-version: '22.08'
+runtime-version: '23.08'
 sdk: org.freedesktop.Sdk
 separate-locales: false
 build-options:
@@ -23,6 +23,7 @@ finish-args:
   - --filesystem=xdg-run/app/com.discordapp.DiscordCanary:create
   - --filesystem=~/.wine:ro
   - --filesystem=~/.osu:ro
+  - --filesystem=~/.local/share/osu-wine:ro
 command: start-osu
 modules:
   - name: libevdev
@@ -87,8 +88,8 @@ modules:
       - install -D -m 644 sh.ppy.osu.appdata.xml /app/share/metainfo/sh.ppy.osu.appdata.xml
     sources:
       - type: file
-        url: https://github.com/ppy/osu/releases/download/2022.1208.0/osu.AppImage
-        sha256: e3b17d419948b866337bef4dd4d4d02c5040880408a608a22d6ce18000b416ce
+        url: https://github.com/ppy/osu/releases/download/2023.924.1/osu.AppImage
+        sha256: a047c7e9cb6c88cad5ea9f29ece77035407318aec0111966b802f5317734a38c
         dest-filename: osu.AppImage
         x-checker-data:
           type: json
