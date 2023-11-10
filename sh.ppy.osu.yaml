@@ -65,11 +65,13 @@ modules:
       - install -D -m 644 ld.so.conf /app/etc/ld.so.conf
       - install -m 755 start-osu /app/bin/start-osu
         # app icons
+      - install -D -m 644 osu.svg /app/share/icons/hicolor/scalable/apps/sh.ppy.osu.svg
       - install -D -m 644 osu-512.png /app/share/icons/hicolor/512x512/apps/sh.ppy.osu.png
       - install -D -m 644 osu-256.png /app/share/icons/hicolor/256x256/apps/sh.ppy.osu.png
       - install -D -m 644 osu-128.png /app/share/icons/hicolor/128x128/apps/sh.ppy.osu.png
       - install -D -m 644 osu-64.png /app/share/icons/hicolor/64x64/apps/sh.ppy.osu.png
         # mimetypes
+      - install -D -m 644 mime.svg /app/share/icons/hicolor/scalable/mimetypes/sh.ppy.osu.x-osu-beatmap.svg
       - install -D -m 644 mime-512.png /app/share/icons/hicolor/512x512/mimetypes/sh.ppy.osu.x-osu-beatmap.png
       - install -D -m 644 mime-256.png /app/share/icons/hicolor/256x256/mimetypes/sh.ppy.osu.x-osu-beatmap.png
       - install -D -m 644 mime-128.png /app/share/icons/hicolor/128x128/mimetypes/sh.ppy.osu.x-osu-beatmap.png
@@ -98,6 +100,8 @@ modules:
           url-query: '"https://github.com/ppy/osu/releases/download/" + $version +
             "/osu.AppImage"'
       - type: file
+        path: icons/osu.svg
+      - type: file
         path: icons/osu-512.png
       - type: file
         path: icons/osu-256.png
@@ -105,6 +109,8 @@ modules:
         path: icons/osu-128.png
       - type: file
         path: icons/osu-64.png
+      - type: file
+        path: icons/mime.svg
       - type: file
         path: icons/mime-512.png
       - type: file
