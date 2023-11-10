@@ -92,6 +92,7 @@ modules:
             "/osu.AppImage"'
       - type: file
         path: icons/osu.svg
+      - type: file
         path: x-osu.xml
       - type: file
         path: sh.ppy.osu.appdata.xml
