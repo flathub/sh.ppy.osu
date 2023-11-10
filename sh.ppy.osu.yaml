@@ -66,19 +66,10 @@ modules:
       - install -m 755 start-osu /app/bin/start-osu
         # app icons
       - install -D -m 644 osu.svg /app/share/icons/hicolor/scalable/apps/sh.ppy.osu.svg
-      - install -D -m 644 osu-512.png /app/share/icons/hicolor/512x512/apps/sh.ppy.osu.png
-      - install -D -m 644 osu-256.png /app/share/icons/hicolor/256x256/apps/sh.ppy.osu.png
-      - install -D -m 644 osu-128.png /app/share/icons/hicolor/128x128/apps/sh.ppy.osu.png
-      - install -D -m 644 osu-64.png /app/share/icons/hicolor/64x64/apps/sh.ppy.osu.png
+
         # mimetypes
       - install -D -m 644 mime.svg /app/share/icons/hicolor/scalable/mimetypes/sh.ppy.osu.x-osu-beatmap.svg
-      - install -D -m 644 mime-512.png /app/share/icons/hicolor/512x512/mimetypes/sh.ppy.osu.x-osu-beatmap.png
-      - install -D -m 644 mime-256.png /app/share/icons/hicolor/256x256/mimetypes/sh.ppy.osu.x-osu-beatmap.png
-      - install -D -m 644 mime-128.png /app/share/icons/hicolor/128x128/mimetypes/sh.ppy.osu.x-osu-beatmap.png
-      - install -D -m 644 mime-64.png /app/share/icons/hicolor/64x64/mimetypes/sh.ppy.osu.x-osu-beatmap.png
-      - install -D -m 644 mime-48.png /app/share/icons/hicolor/48x48/mimetypes/sh.ppy.osu.x-osu-beatmap.png
-      - install -D -m 644 mime-32.png /app/share/icons/hicolor/32x32/mimetypes/sh.ppy.osu.x-osu-beatmap.png
-      - install -D -m 644 mime-16.png /app/share/icons/hicolor/16x16/mimetypes/sh.ppy.osu.x-osu-beatmap.png
+
         # It seems that nautilus cannot display a MIME-type icon unless it is installed in the directory of the current theme.
       - cp -a -x /app/share/icons/hicolor -T /app/share/icons/Adwaita
       - cp -a -x /app/share/icons/hicolor -T /app/share/icons/breeze
@@ -101,31 +92,6 @@ modules:
             "/osu.AppImage"'
       - type: file
         path: icons/osu.svg
-      - type: file
-        path: icons/osu-512.png
-      - type: file
-        path: icons/osu-256.png
-      - type: file
-        path: icons/osu-128.png
-      - type: file
-        path: icons/osu-64.png
-      - type: file
-        path: icons/mime.svg
-      - type: file
-        path: icons/mime-512.png
-      - type: file
-        path: icons/mime-256.png
-      - type: file
-        path: icons/mime-128.png
-      - type: file
-        path: icons/mime-64.png
-      - type: file
-        path: icons/mime-48.png
-      - type: file
-        path: icons/mime-32.png
-      - type: file
-        path: icons/mime-16.png
-      - type: file
         path: x-osu.xml
       - type: file
         path: sh.ppy.osu.appdata.xml
