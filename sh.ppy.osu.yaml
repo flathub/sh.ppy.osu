@@ -35,6 +35,10 @@ modules:
       - type: archive
         url: https://www.freedesktop.org/software/libevdev/libevdev-1.12.1.tar.xz
         sha256: 1dbba41bc516d3ca7abc0da5b862efe3ea8a7018fa6e9b97ce9d39401b22426c
+        x-checker-data:
+          type: html
+          url: https://www.freedesktop.org/software/libevdev/
+          pattern: (libevdev-(\d+\.\d+\.\d+)\.tar\.xz)
     config-opts:
       - -Ddocumentation=disabled
       - -Dtests=disabled
