@@ -3,11 +3,10 @@
     <id>sh.ppy.osu</id>
     <name>osu!</name>
     <metadata_license>CC0-1.0</metadata_license>
-    <summary>A free-to-win rhythm game. Rhythm is just a *click* away!</summary>
-    <summary xml:lang="ru">Популярная ритм-игра с открытым исходным кодом</summary>
+    <summary>Rhythm is just a *click* away!</summary>
     <description>
         <p>Open source rhythm game written in C# and inspired by Osu! Tatakae! Ouendan</p>
-        <p>Attention: Unofficial package. For official release, please visit <url type="homepage">https://github.com/ppy/osu/releases</url>.</p>
+        <p>Attention: Unofficial package. For official release, please visit <url>https://github.com/ppy/osu/releases</url>.</p>
     </description>
     <url type="homepage">https://osu.ppy.sh</url>
     <categories>
