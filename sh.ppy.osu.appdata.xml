@@ -6,7 +6,7 @@
     <summary>Rhythm is just a *click* away!</summary>
     <description>
         <p>Open source rhythm game written in C# and inspired by Osu! Tatakae! Ouendan</p>
-        <p><em>Attention: Unofficial package.</em> For official release, please visit the homepage.</p>
+        <p><em>Attention: Unofficial package.</em> For official releases, please visit the osu! website.</p>
     </description>
     <url type="homepage">https://osu.ppy.sh</url>
     <categories>
