@@ -3,21 +3,10 @@
     <id>sh.ppy.osu</id>
     <name>osu!</name>
     <metadata_license>CC0-1.0</metadata_license>
-    <summary>A free-to-win rhythm game. Rhythm is just a *click* away!</summary>
-    <summary xml:lang="ru">Популярная ритм-игра с открытым исходным кодом</summary>
+    <summary>Rhythm is just a *click* away!</summary>
     <description>
         <p>Open source rhythm game written in C# and inspired by Osu! Tatakae! Ouendan</p>
-        <p>
-            Attention: Unofficial package. Please report all bugs found on https://github.com/flathub/sh.ppy.osu (if you think they may be related to a flatpak)
-        </p>
-        <p>For official release, please visit https://github.com/ppy/osu/releases</p>
-    </description>
-    <description xml:lang="ru">
-        <p>Бесплатная популярная ритм-игра с открытым исходным кодом написанная на C# и вдохнавлённая Osu! Tatakae! Ouendan</p>
-        <p>
-            Внимание: неофициальный пакет. Пожалуйста, сообщайте о всех найденых багах на https://github.com/flathub/sh.ppy.osu (если вы думаете, что они могут быть связаны с flatpak)
-        </p>
-        <p>Официальную сборку можно скачать с https://github.com/ppy/osu/releases</p>
+        <p><em>Attention: Unofficial package.</em> For official releases, please visit the osu! website.</p>
     </description>
     <url type="homepage">https://osu.ppy.sh</url>
     <categories>
