@@ -10,7 +10,6 @@
   <project_license>MIT</project_license>
   <description>
     <p>Open source rhythm game written in C# and inspired by Osu! Tatakae! Ouendan</p>
-    <p></p>
   </description>
   <screenshots>
     <screenshot type="default">
