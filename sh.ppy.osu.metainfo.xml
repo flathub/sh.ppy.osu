@@ -3,7 +3,7 @@
   <id>sh.ppy.osu</id>
   <name>osu!</name>
   <summary>Rhythm is just a *click* away!</summary>
-  <developer>
+  <developer id="sh.ppy">
     <name>ppy Pty Ltd</name>
   </developer>
   <metadata_license>CC0-1.0</metadata_license>
