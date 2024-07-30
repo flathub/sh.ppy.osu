@@ -1,225 +1,220 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <component type="desktop-application">
-    <id>sh.ppy.osu</id>
-    <name>osu!</name>
-    <metadata_license>CC0-1.0</metadata_license>
-    <summary>Rhythm is just a *click* away!</summary>
-    <description>
-        <p>Open source rhythm game written in C# and inspired by Osu! Tatakae! Ouendan</p>
-        <p><em>Attention: Unofficial package.</em> For official releases, please visit the osu! website.</p>
-    </description>
-    <url type="homepage">https://osu.ppy.sh</url>
-    <categories>
-        <category>Game</category>
-    </categories>
-    <provides>
-        <mediatype>application/x-osu-beatmap</mediatype>
-        <mediatype>application/x-osu-beatmap-archive</mediatype>
-        <mediatype>application/x-osu-skin-archive</mediatype>
-        <mediatype>application/x-osu-storyboard</mediatype>
-        <mediatype>application/x-osu-replay</mediatype>
-        <binary>osu!</binary>
-    </provides>
-    <screenshots>
-        <screenshot type="default">
-            <caption>Main screen</caption>
-            <caption xml:lang="ru">Главное меню</caption>
-            <image>https://raw.githubusercontent.com/flathub/sh.ppy.osu/master/screenshots/osu-titlescreen.jpg</image>
-        </screenshot>
-        <screenshot>
-            <caption>Map select page</caption>
-            <caption xml:lang="ru">Выбор карт</caption>
-            <image>https://raw.githubusercontent.com/flathub/sh.ppy.osu/master/screenshots/osu-maps.jpg</image>
-        </screenshot>
-        <screenshot>
-            <caption>osu! gameplay</caption>
-            <caption xml:lang="ru">Оригинальный режим игры</caption>
-            <image>https://raw.githubusercontent.com/flathub/sh.ppy.osu/master/screenshots/osu-osu.jpg</image>
-        </screenshot>
-        <screenshot>
-            <caption>osu!taiko gameplay</caption>
-            <caption xml:lang="ru">Режим игры osu!taiko</caption>
-            <image>https://raw.githubusercontent.com/flathub/sh.ppy.osu/master/screenshots/osu-taiko.jpg</image>
-        </screenshot>
-        <screenshot>
-            <caption>osu!catch gameplay</caption>
-            <caption xml:lang="ru">Режим игры osu!catch</caption>
-            <image>https://raw.githubusercontent.com/flathub/sh.ppy.osu/master/screenshots/osu-catch.jpg</image>
-        </screenshot>
-        <screenshot>
-            <caption>osu!mania gameplay</caption>
-            <caption xml:lang="ru">Режим игры osu!mania</caption>
-            <image>https://raw.githubusercontent.com/flathub/sh.ppy.osu/master/screenshots/osu-mania.jpg</image>
-        </screenshot>
-    </screenshots>
-    <metadata>
-        <value key="GnomeSoftware::popular-background">https://raw.githubusercontent.com/flathub/sh.ppy.osu/master/screenshots/osu-banner.jpg</value>
-    </metadata>
-    <launchable type="desktop-id">sh.ppy.osu.desktop</launchable>
-    <project_license>MIT</project_license>
-    <!-- Assets used by osu! is licensed under CC-BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/legalcode) -->
-    <developer_name>ppy Pty Ltd</developer_name>
-    <releases>
-        <release version="2024.727.0" date="2024-07-26">
-            <description></description>
-        </release>
-        <release version="2024.726.0" date="2024-07-25">
-            <description/>
-        </release>
-        <release version="2024.725.0" date="2024-07-24">
-            <description/>
-        </release>
-        <release version="2024.718.1" date="2024-07-20">
-            <description/>
-        </release>
-        <release version="2024.718.0" date="2024-07-18">
-            <description/>
-        </release>
-        <release version="2024.625.2" date="2024-06-25">
-            <description/>
-        </release>
-        <release version="2024.625.0" date="2024-06-25">
-            <description/>
-        </release>
-        <release version="2024.521.2" date="2024-05-21">
-            <description/>
-        </release>
-        <release version="2024.519.1" date="2024-05-19"/>
-        <release version="2024.412.1" date="2024-04-13"/>
-        <release version="2024.412.0" date="2024-04-13"/>
-        <release version="2024.312.1" date="2024-03-12"/>
-        <release version="2024.312.0" date="2024-03-11"/>
-        <release version="2024.302.1" date="2024-03-02"/>
-        <release version="2024.302.0" date="2024-03-02"/>
-        <release version="2024.221.0" date="2024-02-21"/>
-        <release version="2024.219.0" date="2024-02-19"/>
-        <release version="2024.131.0" date="2024-01-31"/>
-        <release version="2024.130.2" date="2024-01-30"/>
-        <release version="2024.114.0" date="2024-01-14"/>
-        <release version="2024.113.0" date="2024-01-13"/>
-        <release version="2023.1231.0" date="2023-12-31"/>
-        <release version="2023.1229.1" date="2023-12-29"/>
-        <release version="2023.1229.0" date="2023-12-28"/>
-        <release version="2023.1224.0" date="2023-12-23"/>
-        <release version="2023.1223.0" date="2023-12-22"/>
-        <release version="2023.1222.0" date="2023-12-21"/>
-        <release version="2023.1221.0" date="2023-12-20"/>
-        <release version="2023.1220.0" date="2023-12-19"/>
-        <release version="2023.1218.1" date="2023-12-18"/>
-        <release version="2023.1218.0" date="2023-12-18"/>
-        <release version="2023.1130.0" date="2023-11-30"/>
-        <release version="2023.1114.1" date="2023-11-14"/>
-        <release version="2023.1114.0" date="2023-11-14"/>
-        <release version="2023.1026.0" date="2023-10-26"/>
-        <release version="2023.1008.1" date="2023-10-08"/>
-        <release version="2023.1008.0" date="2023-10-07"/>
-        <release version="2023.924.1" date="2023-09-25"/>
-        <release version="2023.924.0" date="2023-09-24"/>
-        <release version="2023.914.0" date="2023-09-14"/>
-        <release version="2023.913.0" date="2023-09-13"/>
-        <release version="2023.908.2" date="2023-09-08"/>
-        <release version="2023.908.1" date="2023-09-08"/>
-        <release version="2023.908.0" date="2023-09-08"/>
-        <release version="2023.815.0" date="2023-08-15"/>
-        <release version="2023.812.0" date="2023-08-12"/>
-        <release version="2023.811.0" date="2023-08-11"/>
-        <release version="2023.717.0" date="2023-07-16"/>
-        <release version="2023.716.0" date="2023-07-16"/>
-        <release version="2023.621.0" date="2023-06-21"/>
-        <release version="2023.617.0" date="2023-06-16"/>
-        <release version="2023.614.1" date="2023-06-14"/>
-        <release version="2023.614.0" date="2023-06-14"/>
-        <release version="2023.610.0" date="2023-06-09"/>
-        <release version="2023.605.0" date="2023-06-05"/>
-        <release version="2023.513.0" date="2023-05-13"/>
-        <release version="2023.511.0" date="2023-05-11"/>
-        <release version="2023.419.0" date="2023-04-19"/>
-        <release version="2023.403.1" date="2023-04-03"/>
-        <release version="2023.326.1" date="2023-03-26"/>
-        <release version="2023.305.0" date="2023-03-05"/>
-        <release version="2023.301.0" date="2023-03-01"/>
-        <release version="2023.207.0" date="2023-02-07"/>
-        <release version="2023.123.0" date="2023-01-22"/>
-        <release version="2023.121.0" date="2023-01-21"/>
-        <release version="2022.1228.0" date="2022-12-28"/>
-        <release version="2022.1227.0" date="2022-12-27"/>
-        <release version="2022.1208.0" date="2022-12-08"/>
-        <release version="2022.1207.0" date="2022-12-07"/>
-        <release version="2022.1205.0" date="2022-12-05"/>
-        <release version="2022.1117.0" date="2022-11-17"/>
-        <release version="2022.1101.0" date="2022-11-01"/>
-        <release version="2022.1031.0" date="2022-10-31"/>
-        <release version="2022.1022.0" date="2022-10-22"/>
-        <release version="2022.1008.2" date="2022-10-08"/>
-        <release version="2022.923.1" date="2022-09-23"/>
-        <release version="2022.923.0" date="2022-09-23"/>
-        <release version="2022.911.0" date="2022-09-11"/>
-        <release version="2022.910.0" date="2022-09-09"/>
-        <release version="2022.902.1" date="2022-09-01"/>
-        <release version="2022.901.0" date="2022-08-31"/>
-        <release version="2022.821.0" date="2022-08-21"/>
-        <release version="2022.816.0" date="2022-08-16"/>
-        <release version="2022.810.2" date="2022-08-10"/>
-        <release version="2022.731.1" date="2022-07-30"/>
-        <release version="2022.723.0" date="2022-07-22"/>
-        <release version="2022.719.0" date="2022-07-18"/>
-        <release version="2022.716.1" date="2022-07-16"/>
-        <release version="2022.709.1" date="2022-07-08"/>
-        <release version="2022.709.0" date="2022-07-08"/>
-        <release version="2022.704.0" date="2022-07-03"/>
-        <release version="2022.630.0" date="2022-06-29"/>
-        <release version="2022.628.0" date="2022-06-28"/>
-        <release version="2022.621.0" date="2022-06-21"/>
-        <release version="2022.615.0" date="2022-06-15"/>
-        <release version="2022.612.0" date="2022-06-11"/>
-        <release version="2022.605.1" date="2022-06-05"/>
-        <release version="2022.528.0" date="2022-05-28"/>
-        <release version="2022.523.0" date="2022-05-23"/>
-        <release version="2022.515.0" date="2022-05-15"/>
-        <release version="2022.509.0" date="2022-05-09"/>
-        <release version="2022.501.0" date="2022-05-01"/>
-        <release version="2022.424.1" date="2022-04-24"/>
-        <release version="2022.418.0" date="2022-04-17"/>
-        <release version="2022.409.0" date="2022-04-09"/>
-        <release version="2022.405.0" date="2022-04-05"/>
-        <release version="2022.327.0" date="2022-03-27"/>
-        <release version="2022.319.0" date="2022-03-19"/>
-        <release version="2022.314.0" date="2022-03-14"/>
-        <release version="2022.306.0" date="2022-03-05"/>
-        <release version="2022.226.0" date="2022-02-26"/>
-        <release version="2022.217.0" date="2022-02-17"/>
-        <release version="2022.216.0" date="2022-02-16"/>
-        <release version="2022.205.0" date="2022-02-05"/>
-        <release version="2022.128.0" date="2022-01-27"/>
-        <release version="2022.118.0" date="2022-01-18"/>
-        <release version="2022.108.0" date="2022-01-08"/>
-        <release version="2021.1225.0" date="2021-12-25"/>
-        <release version="2021.1218.0" date="2021-12-17"/>
-        <release version="2021.1211.0" date="2021-12-11"/>
-        <release version="2021.1207.0" date="2021-12-07"/>
-        <release version="2021.1206.0" date="2021-12-06"/>
-        <release version="2021.1202.0" date="2021-12-02"/>
-        <release version="2021.1127.0" date="2021-11-27"/>
-        <release version="2021.1120.0" date="2021-11-20"/>
-        <release version="2021.1113.0" date="2021-11-13"/>
-    </releases>
-    <content_rating type="oars-1.1">
-        <content_attribute id="sex-nudity">mild</content_attribute>
-        <content_attribute id="language-humor">mild</content_attribute>
-        <content_attribute id="social-chat">moderate</content_attribute>
-        <content_attribute id="social-info">moderate</content_attribute>
-        <content_attribute id="money-purchasing">mild</content_attribute>
-    </content_rating>
-    <url type="bugtracker">https://github.com/flathub/sh.ppy.osu/issues</url>
-    <url type="faq">https://osu.ppy.sh/wiki/en/FAQ</url>
-    <url type="donation">https://osu.ppy.sh/home/support</url>
-    <url type="help">https://osu.ppy.sh/wiki/en/Main_Page</url>
-    <url type="translate">https://crowdin.com/project/osu-web</url>
-    <recommends>
-        <control>pointing</control>
-        <control>keyboard</control>
-    </recommends>
-    <kudos>     <!-- Gnome Software specific things (https://gitlab.gnome.org/GNOME/gnome-software/-/blob/main/doc/kudos.md) -->
-        <kudo>HiDpiIcon</kudo>              <!-- 128x128 or larger application icon -->
-    </kudos>
+  <id>sh.ppy.osu</id>
+  <name>osu!</name>
+  <summary>Rhythm is just a *click* away!</summary>
+  <developer>
+    <name>ppy Pty Ltd</name>
+  </developer>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <description>
+    <p>Open source rhythm game written in C# and inspired by Osu! Tatakae! Ouendan</p>
+    <p></p>
+  </description>
+  <screenshots>
+    <screenshot type="default">
+      <caption>Main screen</caption>
+      <caption xml:lang="ru">Главное меню</caption>
+      <image type="source">https://raw.githubusercontent.com/flathub/sh.ppy.osu/master/screenshots/osu-titlescreen.jpg</image>
+    </screenshot>
+    <screenshot>
+      <caption>Map select page</caption>
+      <caption xml:lang="ru">Выбор карт</caption>
+      <image type="source">https://raw.githubusercontent.com/flathub/sh.ppy.osu/master/screenshots/osu-maps.jpg</image>
+    </screenshot>
+    <screenshot>
+      <caption>osu! gameplay</caption>
+      <caption xml:lang="ru">Оригинальный режим игры</caption>
+      <image type="source">https://raw.githubusercontent.com/flathub/sh.ppy.osu/master/screenshots/osu-osu.jpg</image>
+    </screenshot>
+    <screenshot>
+      <caption>osu!taiko gameplay</caption>
+      <caption xml:lang="ru">Режим игры osu!taiko</caption>
+      <image type="source">https://raw.githubusercontent.com/flathub/sh.ppy.osu/master/screenshots/osu-taiko.jpg</image>
+    </screenshot>
+    <screenshot>
+      <caption>osu!catch gameplay</caption>
+      <caption xml:lang="ru">Режим игры osu!catch</caption>
+      <image type="source">https://raw.githubusercontent.com/flathub/sh.ppy.osu/master/screenshots/osu-catch.jpg</image>
+    </screenshot>
+    <screenshot>
+      <caption>osu!mania gameplay</caption>
+      <caption xml:lang="ru">Режим игры osu!mania</caption>
+      <image type="source">https://raw.githubusercontent.com/flathub/sh.ppy.osu/master/screenshots/osu-mania.jpg</image>
+    </screenshot>
+  </screenshots>
+  <releases>
+    <release version="2024.727.0" date="2024-07-26" type="stable">
+      <description/>
+    </release>
+    <release version="2024.726.0" date="2024-07-25" type="stable">
+      <description/>
+    </release>
+    <release version="2024.725.0" date="2024-07-24" type="stable">
+      <description/>
+    </release>
+    <release version="2024.718.1" date="2024-07-20" type="stable">
+      <description/>
+    </release>
+    <release version="2024.718.0" date="2024-07-18" type="stable">
+      <description/>
+    </release>
+    <release version="2024.625.2" date="2024-06-25" type="stable">
+      <description/>
+    </release>
+    <release version="2024.625.0" date="2024-06-25" type="stable">
+      <description/>
+    </release>
+    <release version="2024.521.2" date="2024-05-21" type="stable">
+      <description/>
+    </release>
+    <release version="2024.519.1" date="2024-05-19" type="stable"/>
+    <release version="2024.412.1" date="2024-04-13" type="stable"/>
+    <release version="2024.412.0" date="2024-04-13" type="stable"/>
+    <release version="2024.312.1" date="2024-03-12" type="stable"/>
+    <release version="2024.312.0" date="2024-03-11" type="stable"/>
+    <release version="2024.302.1" date="2024-03-02" type="stable"/>
+    <release version="2024.302.0" date="2024-03-02" type="stable"/>
+    <release version="2024.221.0" date="2024-02-21" type="stable"/>
+    <release version="2024.219.0" date="2024-02-19" type="stable"/>
+    <release version="2024.131.0" date="2024-01-31" type="stable"/>
+    <release version="2024.130.2" date="2024-01-30" type="stable"/>
+    <release version="2024.114.0" date="2024-01-14" type="stable"/>
+    <release version="2024.113.0" date="2024-01-13" type="stable"/>
+    <release version="2023.1231.0" date="2023-12-31" type="stable"/>
+    <release version="2023.1229.1" date="2023-12-29" type="stable"/>
+    <release version="2023.1229.0" date="2023-12-28" type="stable"/>
+    <release version="2023.1224.0" date="2023-12-23" type="stable"/>
+    <release version="2023.1223.0" date="2023-12-22" type="stable"/>
+    <release version="2023.1222.0" date="2023-12-21" type="stable"/>
+    <release version="2023.1221.0" date="2023-12-20" type="stable"/>
+    <release version="2023.1220.0" date="2023-12-19" type="stable"/>
+    <release version="2023.1218.1" date="2023-12-18" type="stable"/>
+    <release version="2023.1218.0" date="2023-12-18" type="stable"/>
+    <release version="2023.1130.0" date="2023-11-30" type="stable"/>
+    <release version="2023.1114.1" date="2023-11-14" type="stable"/>
+    <release version="2023.1114.0" date="2023-11-14" type="stable"/>
+    <release version="2023.1026.0" date="2023-10-26" type="stable"/>
+    <release version="2023.1008.1" date="2023-10-08" type="stable"/>
+    <release version="2023.1008.0" date="2023-10-07" type="stable"/>
+    <release version="2023.924.1" date="2023-09-25" type="stable"/>
+    <release version="2023.924.0" date="2023-09-24" type="stable"/>
+    <release version="2023.914.0" date="2023-09-14" type="stable"/>
+    <release version="2023.913.0" date="2023-09-13" type="stable"/>
+    <release version="2023.908.2" date="2023-09-08" type="stable"/>
+    <release version="2023.908.1" date="2023-09-08" type="stable"/>
+    <release version="2023.908.0" date="2023-09-08" type="stable"/>
+    <release version="2023.815.0" date="2023-08-15" type="stable"/>
+    <release version="2023.812.0" date="2023-08-12" type="stable"/>
+    <release version="2023.811.0" date="2023-08-11" type="stable"/>
+    <release version="2023.717.0" date="2023-07-16" type="stable"/>
+    <release version="2023.716.0" date="2023-07-16" type="stable"/>
+    <release version="2023.621.0" date="2023-06-21" type="stable"/>
+    <release version="2023.617.0" date="2023-06-16" type="stable"/>
+    <release version="2023.614.1" date="2023-06-14" type="stable"/>
+    <release version="2023.614.0" date="2023-06-14" type="stable"/>
+    <release version="2023.610.0" date="2023-06-09" type="stable"/>
+    <release version="2023.605.0" date="2023-06-05" type="stable"/>
+    <release version="2023.513.0" date="2023-05-13" type="stable"/>
+    <release version="2023.511.0" date="2023-05-11" type="stable"/>
+    <release version="2023.419.0" date="2023-04-19" type="stable"/>
+    <release version="2023.403.1" date="2023-04-03" type="stable"/>
+    <release version="2023.326.1" date="2023-03-26" type="stable"/>
+    <release version="2023.305.0" date="2023-03-05" type="stable"/>
+    <release version="2023.301.0" date="2023-03-01" type="stable"/>
+    <release version="2023.207.0" date="2023-02-07" type="stable"/>
+    <release version="2023.123.0" date="2023-01-22" type="stable"/>
+    <release version="2023.121.0" date="2023-01-21" type="stable"/>
+    <release version="2022.1228.0" date="2022-12-28" type="stable"/>
+    <release version="2022.1227.0" date="2022-12-27" type="stable"/>
+    <release version="2022.1208.0" date="2022-12-08" type="stable"/>
+    <release version="2022.1207.0" date="2022-12-07" type="stable"/>
+    <release version="2022.1205.0" date="2022-12-05" type="stable"/>
+    <release version="2022.1117.0" date="2022-11-17" type="stable"/>
+    <release version="2022.1101.0" date="2022-11-01" type="stable"/>
+    <release version="2022.1031.0" date="2022-10-31" type="stable"/>
+    <release version="2022.1022.0" date="2022-10-22" type="stable"/>
+    <release version="2022.1008.2" date="2022-10-08" type="stable"/>
+    <release version="2022.923.1" date="2022-09-23" type="stable"/>
+    <release version="2022.923.0" date="2022-09-23" type="stable"/>
+    <release version="2022.911.0" date="2022-09-11" type="stable"/>
+    <release version="2022.910.0" date="2022-09-09" type="stable"/>
+    <release version="2022.902.1" date="2022-09-01" type="stable"/>
+    <release version="2022.901.0" date="2022-08-31" type="stable"/>
+    <release version="2022.821.0" date="2022-08-21" type="stable"/>
+    <release version="2022.816.0" date="2022-08-16" type="stable"/>
+    <release version="2022.810.2" date="2022-08-10" type="stable"/>
+    <release version="2022.731.1" date="2022-07-30" type="stable"/>
+    <release version="2022.723.0" date="2022-07-22" type="stable"/>
+    <release version="2022.719.0" date="2022-07-18" type="stable"/>
+    <release version="2022.716.1" date="2022-07-16" type="stable"/>
+    <release version="2022.709.1" date="2022-07-08" type="stable"/>
+    <release version="2022.709.0" date="2022-07-08" type="stable"/>
+    <release version="2022.704.0" date="2022-07-03" type="stable"/>
+    <release version="2022.630.0" date="2022-06-29" type="stable"/>
+    <release version="2022.628.0" date="2022-06-28" type="stable"/>
+    <release version="2022.621.0" date="2022-06-21" type="stable"/>
+    <release version="2022.615.0" date="2022-06-15" type="stable"/>
+    <release version="2022.612.0" date="2022-06-11" type="stable"/>
+    <release version="2022.605.1" date="2022-06-05" type="stable"/>
+    <release version="2022.528.0" date="2022-05-28" type="stable"/>
+    <release version="2022.523.0" date="2022-05-23" type="stable"/>
+    <release version="2022.515.0" date="2022-05-15" type="stable"/>
+    <release version="2022.509.0" date="2022-05-09" type="stable"/>
+    <release version="2022.501.0" date="2022-05-01" type="stable"/>
+    <release version="2022.424.1" date="2022-04-24" type="stable"/>
+    <release version="2022.418.0" date="2022-04-17" type="stable"/>
+    <release version="2022.409.0" date="2022-04-09" type="stable"/>
+    <release version="2022.405.0" date="2022-04-05" type="stable"/>
+    <release version="2022.327.0" date="2022-03-27" type="stable"/>
+    <release version="2022.319.0" date="2022-03-19" type="stable"/>
+    <release version="2022.314.0" date="2022-03-14" type="stable"/>
+    <release version="2022.306.0" date="2022-03-05" type="stable"/>
+    <release version="2022.226.0" date="2022-02-26" type="stable"/>
+    <release version="2022.217.0" date="2022-02-17" type="stable"/>
+    <release version="2022.216.0" date="2022-02-16" type="stable"/>
+    <release version="2022.205.0" date="2022-02-05" type="stable"/>
+    <release version="2022.128.0" date="2022-01-27" type="stable"/>
+    <release version="2022.118.0" date="2022-01-18" type="stable"/>
+    <release version="2022.108.0" date="2022-01-08" type="stable"/>
+    <release version="2021.1225.0" date="2021-12-25" type="stable"/>
+    <release version="2021.1218.0" date="2021-12-17" type="stable"/>
+    <release version="2021.1211.0" date="2021-12-11" type="stable"/>
+    <release version="2021.1207.0" date="2021-12-07" type="stable"/>
+    <release version="2021.1206.0" date="2021-12-06" type="stable"/>
+    <release version="2021.1202.0" date="2021-12-02" type="stable"/>
+    <release version="2021.1127.0" date="2021-11-27" type="stable"/>
+    <release version="2021.1120.0" date="2021-11-20" type="stable"/>
+    <release version="2021.1113.0" date="2021-11-13" type="stable"/>
+  </releases>
+  <url type="homepage">https://osu.ppy.sh</url>
+  <url type="bugtracker">https://github.com/flathub/sh.ppy.osu/issues</url>
+  <url type="faq">https://osu.ppy.sh/wiki/en/FAQ</url>
+  <url type="help">https://osu.ppy.sh/wiki/en/Main_Page</url>
+  <url type="donation">https://osu.ppy.sh/home/support</url>
+  <url type="translate">https://crowdin.com/project/osu-web</url>
+  <categories>
+    <category>Game</category>
+  </categories>
+  <recommends>
+    <control>pointing</control>
+    <control>keyboard</control>
+  </recommends>
+  <content_rating type="oars-1.1">
+    <content_attribute id="sex-nudity">mild</content_attribute>
+    <content_attribute id="language-humor">mild</content_attribute>
+    <content_attribute id="money-purchasing">mild</content_attribute>
+    <content_attribute id="social-chat">moderate</content_attribute>
+    <content_attribute id="social-info">moderate</content_attribute>
+  </content_rating>
+  <launchable type="desktop-id">sh.ppy.osu.desktop</launchable>
+  <provides>
+    <mediatype>application/x-osu-beatmap</mediatype>
+    <mediatype>application/x-osu-beatmap-archive</mediatype>
+    <mediatype>application/x-osu-skin-archive</mediatype>
+    <mediatype>application/x-osu-storyboard</mediatype>
+    <mediatype>application/x-osu-replay</mediatype>
+    <binary>osu!</binary>
+  </provides>
 </component>
