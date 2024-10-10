@@ -81,7 +81,7 @@ modules:
       - install -D -m 644 mime-48.png /app/share/icons/hicolor/48x48/mimetypes/sh.ppy.osu.x-osu-beatmap.png
       - install -D -m 644 mime-32.png /app/share/icons/hicolor/32x32/mimetypes/sh.ppy.osu.x-osu-beatmap.png
       - install -D -m 644 mime-16.png /app/share/icons/hicolor/16x16/mimetypes/sh.ppy.osu.x-osu-beatmap.png
-        # It seems that nautilus cannot display a MIME-type icon unless it is installed in the directory of the current theme.
+        # It seems that nautilus cannot display a MIME-type icon unless it is installed in the directory of the current theme
       - cp -a -x /app/share/icons/hicolor -T /app/share/icons/Adwaita
       - cp -a -x /app/share/icons/hicolor -T /app/share/icons/breeze
       - rm -r /app/share/icons/Adwaita/*/apps
