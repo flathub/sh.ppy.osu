@@ -81,7 +81,7 @@ modules:
       - install -D -m 644 mime-48.png /app/share/icons/hicolor/48x48/mimetypes/sh.ppy.osu.x-osu-beatmap.png
       - install -D -m 644 mime-32.png /app/share/icons/hicolor/32x32/mimetypes/sh.ppy.osu.x-osu-beatmap.png
       - install -D -m 644 mime-16.png /app/share/icons/hicolor/16x16/mimetypes/sh.ppy.osu.x-osu-beatmap.png
-        # It seems that nautilus cannot display a MIME-type icon unless it is installed in the directory of the current theme.
+        # It seems that nautilus cannot display a MIME-type icon unless it is installed in the directory of the current theme
       - cp -a -x /app/share/icons/hicolor -T /app/share/icons/Adwaita
       - cp -a -x /app/share/icons/hicolor -T /app/share/icons/breeze
       - rm -r /app/share/icons/Adwaita/*/apps
@@ -92,8 +92,8 @@ modules:
       - install -D -m 644 sh.ppy.osu.appdata.xml /app/share/metainfo/sh.ppy.osu.appdata.xml
     sources:
       - type: file
-        url: https://github.com/ppy/osu/releases/download/2024.906.2/osu.AppImage
-        sha256: cd09d1dcac25135813587f1ff860d106c73b5a17e7f57a53d43fcd2e0e53b6b5
+        url: https://github.com/ppy/osu/releases/download/2024.1009.1/osu.AppImage
+        sha256: d87d923dc526fc7ff40fd06a0624c5bda0b0774735e3fafea1687279974da685
         dest-filename: osu.AppImage
         x-checker-data:
           type: json
