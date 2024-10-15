@@ -53,11 +53,6 @@ modules:
       - mv ./squashfs-root/usr/bin/* /app/bin
         # desktop file
       - install -D -m 644 ./squashfs-root/osu!.desktop /app/share/applications/sh.ppy.osu.desktop
-        # The following two lines can be removed after flathub supports version 1.5 of desktop entry files
-        # See https://discourse.flathub.org/t/what-version-of-desktop-entry-file-is-allowed-in-flathub/2351
-      - desktop-file-edit --remove-key="SingleMainWindow" --set-key="Version" --set-value="1.4"
-        /app/share/applications/sh.ppy.osu.desktop
-      - desktop-file-edit --set-key="X-SingleMainWindow" --set-value="true" /app/share/applications/sh.ppy.osu.desktop
       - desktop-file-edit --set-key="Icon" --set-value="sh.ppy.osu" /app/share/applications/sh.ppy.osu.desktop
       - desktop-file-edit --set-key="Exec" --set-value="start-osu %F" /app/share/applications/sh.ppy.osu.desktop
       - desktop-file-edit --set-key="StartupWMClass" --set-value="osu!" /app/share/applications/sh.ppy.osu.desktop
