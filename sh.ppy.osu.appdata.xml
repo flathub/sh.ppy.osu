@@ -60,8 +60,11 @@
     <!-- Assets used by osu! is licensed under CC-BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/legalcode) -->
     <developer_name>ppy Pty Ltd</developer_name>
     <releases>
-        <release version="2025.118.2" date="2025-01-19">
+        <release version="2025.118.3" date="2025-01-24">
             <description></description>
+        </release>
+        <release version="2025.118.2" date="2025-01-19">
+            <description/>
         </release>
         <release version="2025.118.0" date="2025-01-18">
             <description/>
