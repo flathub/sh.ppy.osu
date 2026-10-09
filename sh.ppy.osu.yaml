@@ -1,6 +1,6 @@
 app-id: sh.ppy.osu
 runtime: org.freedesktop.Platform
-runtime-version: '25.08'
+runtime-version: '26.08'
 sdk: org.freedesktop.Sdk
 separate-locales: false
 build-options:
@@ -56,9 +56,10 @@ modules:
       - desktop-file-edit --set-key="Icon" --set-value="sh.ppy.osu" /app/share/applications/sh.ppy.osu.desktop
       - desktop-file-edit --set-key="Exec" --set-value="start-osu %F" /app/share/applications/sh.ppy.osu.desktop
       - desktop-file-edit --set-key="StartupWMClass" --set-value="osu!" /app/share/applications/sh.ppy.osu.desktop
-      - desktop-file-edit --set-key="StartupNotify" --set-value="true" /app/share/applications/sh.ppy.osu.desktop ###
-      - desktop-file-edit --set-key="MimeType" --set-value="application/x-osu-beatmap;application/x-osu-beatmap-archive;application/x-osu-skin-archive;application/x-osu-storyboard;application/x-osu-replay;application/zip;x-scheme-handler/osu"
+      - desktop-file-edit --set-key="StartupNotify" --set-value="true" /app/share/applications/sh.ppy.osu.desktop
+      - desktop-file-edit --set-key="MimeType" --set-value="application/x-osu-beatmap;application/x-osu-beatmap-archive;application/x-osu-skin-archive;application/x-osu-storyboard;application/x-osu-replay;x-scheme-handler/osu"
         /app/share/applications/sh.ppy.osu.desktop
+      - sed -i '/^X-AppImage-Version=/d' /app/share/applications/sh.ppy.osu.desktop
       - desktop-file-edit --set-key="X-Flatpak-RenamedFrom" --set-value="osu!.desktop"
         /app/share/applications/sh.ppy.osu.desktop
       - install -D -m 644 ld.so.conf /app/etc/ld.so.conf
