@@ -24,6 +24,7 @@ finish-args:
   - --filesystem=~/.wine:ro
   - --filesystem=~/.osu:ro
   - --filesystem=~/.local/share/osu-wine:ro
+  - --filesystem=/tmp/lazer:rw
 command: start-osu
 modules:
   - name: libevdev
