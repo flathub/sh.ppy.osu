@@ -58,7 +58,9 @@
     <launchable type="desktop-id">sh.ppy.osu.desktop</launchable>
     <project_license>MIT</project_license>
     <!-- Assets used by osu! is licensed under CC-BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/legalcode) -->
-    <developer_name>ppy Pty Ltd</developer_name>
+   	<developer id="sh.ppy">
+		<name>ppy Pty Ltd</name>
+	</developer>
     <releases>
         <release version="2026.1117.0-lazer" date="2026-11-17">
             <url type="details">https://github.com/ppy/osu/releases/tag/2026.1117.0-lazer</url>
