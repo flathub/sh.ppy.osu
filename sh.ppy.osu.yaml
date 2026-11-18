@@ -2,27 +2,20 @@ app-id: sh.ppy.osu
 runtime: org.freedesktop.Platform
 runtime-version: '26.08'
 sdk: org.freedesktop.Sdk
+separate-locales: false
+command: start-osu
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.dotnet10
-separate-locales: false
-build-options:
-  no-debuginfo: true
-  prepend-path: "/usr/lib/sdk/dotnet10/bin"
-  append-ld-library-path: "/usr/lib/sdk/dotnet10/lib"
-  prepend-pkg-config-path: "/usr/lib/sdk/dotnet10/lib/pkgconfig"
 
 finish-args:
-  - --share=ipc
-  - --socket=fallback-x11
-  - --socket=wayland
   - --share=network
+  - --share=ipc
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --socket=pulseaudio
   - --device=dri
   - --device=input
   - --device-if=all:!has-input-device
-  - --socket=pulseaudio
-  # https://github.com/ppy/osu/pull/19471/commits/38a8b9cf0af9e5bbd523378710ab2adbd908a36d
-  # https://github.com/libsdl-org/SDL/blob/a6179e85c02bc65ff64553c046b16d2ef1a72ba9/src/power/linux/SDL_syspower.c#L542
-  - --system-talk-name=org.freedesktop.UPower
   - --filesystem=xdg-music:ro
   - --filesystem=xdg-download:rw
   - --filesystem=xdg-videos:ro
@@ -33,7 +26,9 @@ finish-args:
   - --filesystem=~/.osu:ro
   - --filesystem=~/.local/share/osu-wine:ro
   - --env=DOTNET_ROOT=/app/lib/dotnet
-command: start-osu
+  # https://github.com/ppy/osu/pull/19471/commits/38a8b9cf0af9e5bbd523378710ab2adbd908a36d
+  # https://github.com/libsdl-org/SDL/blob/a6179e85c02bc65ff64553c046b16d2ef1a72ba9/src/power/linux/SDL_syspower.c#L542
+  - --system-talk-name=org.freedesktop.UPower
 
 modules:
   - name: dotnet
@@ -43,6 +38,9 @@ modules:
 
   - name: libevdev
     buildsystem: meson
+    config-opts:
+      - -Ddocumentation=disabled
+      - -Dtests=disabled
     cleanup:
       - /include
       - /lib/pkgconfig
@@ -54,18 +52,20 @@ modules:
           type: html
           url: https://www.freedesktop.org/software/libevdev/
           pattern: (libevdev-(\d+\.\d+\.\d+)\.tar\.xz)
-    config-opts:
-      - -Ddocumentation=disabled
-      - -Dtests=disabled
 
   - name: osu-lazer
     buildsystem: simple
+    build-options:
+      no-debuginfo: true
+      prepend-path: "/usr/lib/sdk/dotnet10/bin"
+      append-ld-library-path: "/usr/lib/sdk/dotnet10/lib"
+      prepend-pkg-config-path: "/usr/lib/sdk/dotnet10/lib/pkgconfig"
     build-commands:
-      - mkdir /app/share/applications
+      - mkdir -p /app/share/applications
+      - mkdir -p /app/bin
       - mkdir osu-lazer
       - tar -xf osu-lazer.tar.gz -C osu-lazer --strip-components 1
       - dotnet publish osu-lazer/osu.Desktop/osu.Desktop.csproj -c Release --no-self-contained --source ./nuget-sources
-      - mkdir -p /app/bin
       - cp -r osu-lazer/osu.Desktop/bin/Release/net10.0/publish/* /app/bin
     post-install:
       - install -Dm755 start-osu /app/bin
