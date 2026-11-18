@@ -65,6 +65,7 @@ modules:
     build-commands:
       - mkdir -p /app/share/applications
       - mkdir -p /app/bin
+      - mkdir - /app/share/mime/packages
       - mkdir osu-lazer
       - tar -xf osu-lazer.tar.gz -C osu-lazer --strip-components 1
       - dotnet publish osu-lazer/osu.Desktop/osu.Desktop.csproj -c Release --no-self-contained --source ./nuget-sources
