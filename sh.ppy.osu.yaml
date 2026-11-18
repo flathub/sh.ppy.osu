@@ -2,9 +2,15 @@ app-id: sh.ppy.osu
 runtime: org.freedesktop.Platform
 runtime-version: '26.08'
 sdk: org.freedesktop.Sdk
+sdk-extensions:
+  - org.freedesktop.Sdk.Extension.dotnet10
 separate-locales: false
 build-options:
   no-debuginfo: true
+  prepend-path: "/usr/lib/sdk/dotnet10/bin"
+  append-ld-library-path: "/usr/lib/sdk/dotnet10/lib"
+  prepend-pkg-config-path: "/usr/lib/sdk/dotnet10/lib/pkgconfig"
+
 finish-args:
   - --share=ipc
   - --socket=fallback-x11
@@ -26,8 +32,15 @@ finish-args:
   - --filesystem=~/.wine:ro
   - --filesystem=~/.osu:ro
   - --filesystem=~/.local/share/osu-wine:ro
+  - --env=DOTNET_ROOT=/app/lib/dotnet
 command: start-osu
+
 modules:
+  - name: dotnet
+    buildsystem: simple
+    build-commands:
+    - /usr/lib/sdk/dotnet10/bin/install.sh
+
   - name: libevdev
     buildsystem: meson
     cleanup:
@@ -48,56 +61,38 @@ modules:
   - name: osu-lazer
     buildsystem: simple
     build-commands:
-        # game
-      - chmod +x ./osu.AppImage
-      - ./osu.AppImage --appimage-extract
-      - install -d -m 755 /app/bin
-      - mv ./squashfs-root/usr/bin/* /app/bin
-        # desktop file
-      - install -D -m 644 ./squashfs-root/osu!.desktop /app/share/applications/sh.ppy.osu.desktop
-      - desktop-file-edit --set-key="Icon" --set-value="sh.ppy.osu" /app/share/applications/sh.ppy.osu.desktop
-      - desktop-file-edit --set-key="Exec" --set-value="start-osu %F" /app/share/applications/sh.ppy.osu.desktop
-      - desktop-file-edit --set-key="StartupWMClass" --set-value="osu!" /app/share/applications/sh.ppy.osu.desktop
-      - desktop-file-edit --set-key="StartupNotify" --set-value="true" /app/share/applications/sh.ppy.osu.desktop ###
-      - desktop-file-edit --set-key="MimeType" --set-value="application/x-osu-beatmap;application/x-osu-beatmap-archive;application/x-osu-skin-archive;application/x-osu-storyboard;application/x-osu-replay;application/zip;x-scheme-handler/osu"
-        /app/share/applications/sh.ppy.osu.desktop
-      - desktop-file-edit --set-key="X-Flatpak-RenamedFrom" --set-value="osu!.desktop"
-        /app/share/applications/sh.ppy.osu.desktop
-      - install -D -m 644 ld.so.conf /app/etc/ld.so.conf
-      - install -m 755 start-osu /app/bin/start-osu
-        # app icons
-      - install -D -m 644 osu-512.png /app/share/icons/hicolor/512x512/apps/sh.ppy.osu.png
-      - install -D -m 644 osu-256.png /app/share/icons/hicolor/256x256/apps/sh.ppy.osu.png
-      - install -D -m 644 osu-128.png /app/share/icons/hicolor/128x128/apps/sh.ppy.osu.png
-      - install -D -m 644 osu-64.png /app/share/icons/hicolor/64x64/apps/sh.ppy.osu.png
-        # mimetypes
-      - install -D -m 644 mime-512.png /app/share/icons/hicolor/512x512/mimetypes/sh.ppy.osu.x-osu-beatmap.png
-      - install -D -m 644 mime-256.png /app/share/icons/hicolor/256x256/mimetypes/sh.ppy.osu.x-osu-beatmap.png
-      - install -D -m 644 mime-128.png /app/share/icons/hicolor/128x128/mimetypes/sh.ppy.osu.x-osu-beatmap.png
-      - install -D -m 644 mime-64.png /app/share/icons/hicolor/64x64/mimetypes/sh.ppy.osu.x-osu-beatmap.png
-      - install -D -m 644 mime-48.png /app/share/icons/hicolor/48x48/mimetypes/sh.ppy.osu.x-osu-beatmap.png
-      - install -D -m 644 mime-32.png /app/share/icons/hicolor/32x32/mimetypes/sh.ppy.osu.x-osu-beatmap.png
-      - install -D -m 644 mime-16.png /app/share/icons/hicolor/16x16/mimetypes/sh.ppy.osu.x-osu-beatmap.png
-        # It seems that nautilus cannot display a MIME-type icon unless it is installed in the directory of the current theme
-      - cp -a -x /app/share/icons/hicolor -T /app/share/icons/Adwaita
-      - cp -a -x /app/share/icons/hicolor -T /app/share/icons/breeze
-      - rm -r /app/share/icons/Adwaita/*/apps
-      - rm -r /app/share/icons/breeze/*/apps
-        # See https://github.com/flathub/flathub/pull/2619#issuecomment-971378698
-      - ln -s /usr/lib/x86_64-linux-gnu/libasound.so.2 /app/bin/libasound.so
-      - install -D -m 644 x-osu.xml /app/share/mime/packages/${FLATPAK_ID}.xml
-      - install -D -m 644 sh.ppy.osu.appdata.xml /app/share/metainfo/sh.ppy.osu.appdata.xml
+      - mkdir /app/share/applications
+      - mkdir osu-lazer
+      - tar -xf osu-lazer.tar.gz -C osu-lazer --strip-components 1
+      - dotnet publish osu-lazer/osu.Desktop/osu.Desktop.csproj -c Release --no-self-contained --source ./nuget-sources
+      - mkdir -p ${FLATPAK_DEST}/bin
+      - cp -r osu-lazer/osu.Desktop/bin/Release/net10.0/publish/* ${FLATPAK_DEST}/bin
+    post-install:
+      - install -Dm755 start-osu /app/bin
+      - install -Dm644 sh.ppy.osu.desktop /app/share/applications
+      # app icons
+      - install -Dm644 osu-512.png /app/share/icons/hicolor/512x512/apps/sh.ppy.osu.png
+      - install -Dm644 osu-256.png /app/share/icons/hicolor/256x256/apps/sh.ppy.osu.png
+      - install -Dm644 osu-128.png /app/share/icons/hicolor/128x128/apps/sh.ppy.osu.png
+      - install -Dm644 osu-64.png /app/share/icons/hicolor/64x64/apps/sh.ppy.osu.png
+      # mimetypes
+      - install -Dm644 mime-512.png /app/share/icons/hicolor/512x512/mimetypes/sh.ppy.osu.x-osu-beatmap.png
+      - install -Dm644 mime-256.png /app/share/icons/hicolor/256x256/mimetypes/sh.ppy.osu.x-osu-beatmap.png
+      - install -Dm644 mime-128.png /app/share/icons/hicolor/128x128/mimetypes/sh.ppy.osu.x-osu-beatmap.png
+      - install -Dm644 mime-64.png /app/share/icons/hicolor/64x64/mimetypes/sh.ppy.osu.x-osu-beatmap.png
+      - install -Dm644 mime-48.png /app/share/icons/hicolor/48x48/mimetypes/sh.ppy.osu.x-osu-beatmap.png
+      - install -Dm644 mime-32.png /app/share/icons/hicolor/32x32/mimetypes/sh.ppy.osu.x-osu-beatmap.png
+      - install -Dm644 mime-16.png /app/share/icons/hicolor/16x16/mimetypes/sh.ppy.osu.x-osu-beatmap.png
     sources:
       - type: file
-        url: https://github.com/ppy/osu/releases/download/2026.1117.0-lazer/osu.AppImage
-        sha256: 4ebbcb5b581c036f16785500af5c8d13ad1e6d93196fd36be8f245c2a0ea1d2d
-        dest-filename: osu.AppImage
+        url: https://github.com/ppy/osu/archive/refs/tags/2026.1117.0-lazer.tar.gz
+        sha256: d23adb1a5113aa22e949884365d92c43ea3af353cf83627956380a63f24b5c52
+        dest-filename: osu-lazer.tar.gz
         x-checker-data:
-          type: json
-          url: https://api.github.com/repos/ppy/osu/releases/latest
-          version-query: .tag_name | sub("^v"; "")
-          url-query: '"https://github.com/ppy/osu/releases/download/" + $version +
-            "/osu.AppImage"'
+          type: github
+          repo: ppy/osu
+          source-archive: tarball
+      - ./nuget-sources.json
       - type: file
         path: icons/osu-512.png
       - type: file
@@ -123,8 +118,8 @@ modules:
       - type: file
         path: x-osu.xml
       - type: file
-        path: sh.ppy.osu.appdata.xml
-      - type: file
-        path: ld.so.conf
+        path: sh.ppy.osu.metainfo.xml
       - type: file
         path: start-osu
+      - type: file
+        path: sh.ppy.osu.desktop
