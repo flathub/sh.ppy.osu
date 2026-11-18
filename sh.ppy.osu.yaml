@@ -1,6 +1,6 @@
 app-id: sh.ppy.osu
 runtime: org.freedesktop.Platform
-runtime-version: '25.08'
+runtime-version: '26.08'
 sdk: org.freedesktop.Sdk
 separate-locales: false
 build-options:
@@ -10,7 +10,9 @@ finish-args:
   - --socket=fallback-x11
   - --socket=wayland
   - --share=network
-  - --device=all
+  - --device=dri
+  - --device=input
+  - --device-if=all:!has-input-device
   - --socket=pulseaudio
   # https://github.com/ppy/osu/pull/19471/commits/38a8b9cf0af9e5bbd523378710ab2adbd908a36d
   # https://github.com/libsdl-org/SDL/blob/a6179e85c02bc65ff64553c046b16d2ef1a72ba9/src/power/linux/SDL_syspower.c#L542
