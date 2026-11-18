@@ -65,7 +65,7 @@ modules:
       - mkdir osu-lazer
       - tar -xf osu-lazer.tar.gz -C osu-lazer --strip-components 1
       - dotnet publish osu-lazer/osu.Desktop/osu.Desktop.csproj -c Release --no-self-contained --source ./nuget-sources
-      - mkdir -p ${FLATPAK_DEST}/bin
+      - mkdir -p /app/bin
       - cp -r osu-lazer/osu.Desktop/bin/Release/net10.0/publish/* /app/bin
     post-install:
       - install -Dm755 start-osu /app/bin
