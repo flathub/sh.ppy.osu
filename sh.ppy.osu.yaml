@@ -72,7 +72,7 @@ modules:
     post-install:
       - install -Dm755 start-osu /app/bin
       - install -Dm644 sh.ppy.osu.desktop /app/share/applications
-      - install -Dm644 x-osu.xml /app/share/mime/packages/sh.ppy.osu.xml
+      - install -Dm644 sh.ppy.osu.xml /app/share/mime/packages
       # app icons
       - install -Dm644 osu-512.png /app/share/icons/hicolor/512x512/apps/sh.ppy.osu.png
       - install -Dm644 osu-256.png /app/share/icons/hicolor/256x256/apps/sh.ppy.osu.png
@@ -119,7 +119,7 @@ modules:
       - type: file
         path: icons/mime-16.png
       - type: file
-        path: x-osu.xml
+        path: sh.ppy.osu.xml
       - type: file
         path: sh.ppy.osu.metainfo.xml
       - type: file
